@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WalSmart</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1>WalSmart</h1>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="reminders.html">Reminders</a></li>
+        <li><a href="assistant.html">Assistant</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="family.html">Family Mode</a></li>
+        <li><a href="sustainability.html">Sustainability</a></li>
+        <li><a href="#" onclick="logout()">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-banner">
+      <div class="hero-content">
+        <h2>Smarter Shopping Starts Here</h2>
+        <p>WalSmart is your AI-powered shopping companion that predicts, personalizes, and simplifies your Walmart experience.</p>
+        <a href="reminders.html" class="cta-button">Get Started →</a>
+      </div>
+    </section>
+
+    <section class="feature-grid">
+      <div class="card"><a href="reminders.html">🔔 Predictive Reminders<br><span>Never run out of essentials again.</span></a></div>
+      <div class="card"><a href="assistant.html">💬 Conversational Assistant<br><span>Ask, discover, and shop smarter.</span></a></div>
+      <div class="card"><a href="cart.html">🛒 Smart Cart & Offers<br><span>Track spending, grab deals.</span></a></div>
+      <div class="card"><a href="family.html">👨‍👩‍👧‍👦 Family Mode<br><span>Sync lists across household.</span></a></div>
+      <div class="card"><a href="sustainability.html">🌱 Sustainability Tracker<br><span>Shop with an eco-friendly touch.</span></a></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 WalSmart by Lazarus Team</p>
+  </footer>
+
+  <!-- Floating Assistant Chatbot -->
+  <div id="chatbot-launcher">
+  <img src="C:/Users/MY PC/OneDrive/Desktop/sparkathon 2/project-root/assets/chat-avatar.jpeg" alt="Chatbot" style="width: 60px; height: 60px; border-radius: 50%; cursor: pointer;" />
+</div>
+
+  <div id="chatbot-container" class="hidden">
+    <div class="chat-box">
+      <h3 style="text-align:center; margin-bottom: 1rem;">Wally</h3>
+      <div class="chat-window" id="chat-window">
+        <div class="chat-message user">🗣 “Reorder Colgate toothpaste.”</div>
+        <div class="chat-message ai">✅ Colgate toothpaste has been added to your cart.</div>
+        <div class="chat-message user">🗣 “What offers are available?”</div>
+        <div class="chat-message ai">🛍 You have 10% off on Rice and ₹20 cashback on detergent.</div>
+      </div>
+      <div class="chat-input">
+        <input type="text" placeholder="Ask Wally something..." />
+        <button onclick="alert('Voice input coming soon!')">🎙</button>
+      </div>
+      <div style="text-align:center; margin-top: 0.5rem;">
+        <button class="secondary">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logout Script + Chatbot Toggle Script -->
+  <script>
+    function logout() {
+      localStorage.removeItem('rebuyCurrentUser');
+      alert('You have been logged out.');
+      window.location.href = 'login.html';
+    }
+  </script>
+  <script src="index.js"></script>
+</body>
+</html>

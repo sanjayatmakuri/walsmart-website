@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | WalSmart</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body {
+      background: url('') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .auth-container {
+      max-width: 400px;
+      margin: 5rem auto;
+      background: white;
+      padding: 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      border: 2px solid #0071ce;
+      backdrop-filter: blur(2px);
+    }
+    .auth-container h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #0071ce;
+    }
+    .auth-container form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .auth-container input, .auth-container select {
+      padding: 0.75rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .auth-container button {
+      background: #0071ce;
+      color: white;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .auth-container p {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .auth-container a {
+      color: #0071ce;
+      text-decoration: none;
+    }
+</style>
+
+</head>
+<body>
+  <div class="auth-container">
+    <h2>Create Your WalSmart Account</h2>
+    <form id="registerForm">
+      <select id="role" required>
+        <option value="">Select Role</option>
+        <option value="customer">Customer</option>
+        <option value="admin">Admin</option>
+      </select>
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+      <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Login here</a></p>
+  </div>
+
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const role = document.getElementById("role").value;
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+      }
+
+      const users = JSON.parse(localStorage.getItem("rebuyUsers")) || [];
+
+      if (users.some((user) => user.email === email)) {
+        alert("User with this email already exists.");
+        return;
+      }
+
+      users.push({ name, email, password, role });
+      localStorage.setItem("rebuyUsers", JSON.stringify(users));
+
+      alert("Registration successful! Please login.");
+      window.location.href = "login.html";
+    });
+  </script>
+  <footer>
+    <p>&copy; 2025 WalSmart by Lazarus Team</p>
+  </footer>
+</body>
+</html>
