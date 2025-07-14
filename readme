@@ -1,0 +1,50 @@
+WalSmart 🛒 – AI-powered Smart Shopping Assistant
+
+WalSmart is a fully responsive, AI-enhanced web-based retail assistant inspired by Walmart. It predicts shopping needs, helps track essential refills, offers smart family sync features, and promotes sustainable choices — all from one clean interface.
+
+## 🚀 Features
+- 🔔 Predictive Reminders for common products
+- 🛒 Smart Cart with bundled offers
+- 💬 Conversational + Voice Assistant
+- 👨‍👩‍👧 Family Mode with shared lists
+- 🌱 Sustainability Tracker
+- 🧑‍💻 Role-based Login/Register (Admin & Customer)
+- 💬 Floating AI Chatbot with avatar support
+- 🎨 Walmart-themed UI with background imagery
+
+## 📁 Project Structure
+WalSmart/
+├── index.html
+├── login.html
+├── register.html
+├── admin.html
+├── reminders.html
+├── cart.html
+├── family.html
+├── sustainability.html
+├── css/
+│ └── styles.css
+├── js/
+│ └── index.js
+├── assets/
+│ └── images/
+│ ├── walmart-bg.jpg
+│ └── chat-avatar.jpeg
+
+## 🛠 Tech Stack
+- HTML5 + CSS3
+- JavaScript (Vanilla)
+- LocalStorage for user/session handling
+- Mobile Responsive Layout
+- No backend required — deploy-ready for GitHub Pages
+
+## 🧪 Demo Users
+
+| Role     | Email              | Password   |
+|----------|--------------------|------------|
+| Admin    | admin@walsmart.com | admin123   |
+| Customer | alice@walsmart.com | alice123   |
+
+## 📜 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
